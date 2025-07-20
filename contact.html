@@ -5,45 +5,222 @@
   <title>Contact - Ankit Kumar Meena</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <!-- Robotic Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
   <style>
+    :root {
+        --main-color: #ffae00; /* Website theme color */
+        --bg-color: #0d0d0d;
+        --second-bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --header-font: 'Orbitron', sans-serif;
+        --body-font: 'Syne', sans-serif;
+    }
     body {
-      background: #121212;
-      color: #fff;
-      font-family: 'Syne', sans-serif;
-      padding: 50px;
-      text-align: center;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--body-font);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      padding-top: 150px; /* Header ke liye jagah badha di hai */
     }
-    .contact-box {
-      background: #1e1e1e;
-      padding: 40px;
+    .contact-container {
+      background: var(--second-bg-color);
+      padding: 40px 50px;
       border-radius: 15px;
-      display: inline-block;
-      margin-top: 50px;
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid var(--main-color);
+      box-shadow: 0 0 25px rgba(255, 174, 0, 0.2); /* Updated shadow color */
     }
-    .contact-box h1 {
-      font-size: 2.5rem;
+    .contact-container h1 {
+      font-family: var(--header-font);
+      font-size: 2.8rem;
+      color: var(--main-color);
       margin-bottom: 20px;
+      letter-spacing: 2px;
     }
-    .contact-box p {
-      font-size: 1.2rem;
-      margin: 10px 0;
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 15px 0;
+      line-height: 1.6;
     }
-    .contact-box a {
-      color: #b68362;
+    .contact-info a {
+      color: #fff;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .contact-info a:hover {
+      color: var(--main-color);
+    }
+    .contact-info i {
+        margin-right: 10px;
+        color: var(--main-color);
+    }
+    .btn-trigger {
+        display: inline-block;
+        padding: 14px 35px;
+        background: var(--main-color);
+        color: #000;
+        font-size: 1rem;
+        font-family: var(--header-font);
+        font-weight: 700;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all .4s ease;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-trigger:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(255, 174, 0, 0.3); /* Updated shadow color */
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .modal-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    .modal-content {
+        background: var(--second-bg-color);
+        padding: 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        border: 1px solid var(--main-color);
+        position: relative;
+        transform: scale(0.8);
+        transition: transform 0.4s ease;
+    }
+    .modal-overlay.show .modal-content {
+        transform: scale(1);
+    }
+    .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    .modal-close:hover {
+        color: var(--main-color);
+    }
+    .modal-content h2 {
+        font-family: var(--header-font);
+        color: var(--main-color);
+        margin-bottom: 25px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        background: #111;
+        border: 1px solid #444;
+        border-radius: 8px;
+        color: var(--text-color);
+        font-family: var(--body-font);
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: var(--main-color);
+    }
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
     }
   </style>
 </head>
 <body>
+    <header>
+        <a href="index.html" class="logo"><img src="/logo.png"></a>
+        <ul class="menulist">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="contact.html" class="active">contact</a></li>
+        </ul>
+        
+        <div class="menu-right">
+             <!-- "Let's Talk" button yahan nahi chahiye, kyunki yeh index page ka feature hai -->
+            <div class="bx bx-messege" id="menu-icon">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </header>
 
-  <div class="contact-box">
-    <h1>Contact Me</h1>
-    <p><strong>Name:</strong> Ankit Kumar Meena</p>
-    <p><strong>Email:</strong> <a href="mailto:ankit@example.com">ankitkumar956021@gmail.com</a></p>
-    <p><strong>Phone:</strong> <a href="tel:+919999999999">+91 9560214284</a></p>
-    <p><strong>Location:</strong> New Delhi, India</p>
-    <p><strong>Linkden:</strong> <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
+  <div class="contact-container">
+    <h1>Contact Terminal</h1>
+    <div class="contact-info">
+      <p><i class="ri-user-line"></i><strong>Name:</strong> Ankit Kumar Meena</p>
+      <p><i class="ri-mail-send-line"></i><strong>Email:</strong> <a href="mailto:ankitkumar956021@gmail.com">ankitkumar956021@gmail.com</a></p>
+      <p><i class="ri-phone-line"></i><strong>Phone:</strong> <a href="tel:+919560214284">+91 9560214284</a></p>
+      <p><i class="ri-map-pin-line"></i><strong>Location:</strong> New Delhi, India</p>
+      <p><i class="ri-linkedin-box-line"></i><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ankit-meena-043039296/" target="_blank">ankit-meena-043039296</a></p>
+    </div>
+    <button id="open-modal-btn" class="btn-trigger">Send Message</button>
   </div>
+
+  <!-- Contact Form Modal -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span id="close-modal-btn" class="modal-close">&times;</span>
+      <h2>New Transmission</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-trigger">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- YEH LINE ADD KARNI HAI -->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+  <script src="dist/script.js"></script> <!-- Common script for header -->
+  <script src="dist/contact.js"></script> <!-- Page-specific script -->
 
 </body>
 </html>

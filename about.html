@@ -5,69 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Ankit Kumar Meena</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
   <style>
+    body {
+        background-color: var(--bg-color, #121212);
+        color: var(--text-color, #ffffff);
+        font-family: 'Syne', sans-serif;
+    }
     .about-container {
       max-width: 900px;
-      margin: 100px auto 50px;
-      background-color: #1e1e1e;
-      padding: 40px;
+      margin: 150px auto 80px; /* Top margin ko 150px kar diya hai */
+      background-color: #1a1a1a;
+      padding: 40px 50px;
       border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid #333;
     }
 
-    .about-container h1 {
-      font-size: 3rem;
-      color: var(--main-color);
-      margin-bottom: 20px;
+    .about-header h1 {
+      font-size: 2.8rem;
+      color: var(--main-color, #ffae00);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .about-header p {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--second-color, #888);
+        margin-bottom: 40px;
     }
 
-    .about-container p {
+    .about-content h2 {
+        font-size: 1.8rem;
+        color: var(--main-color, #ffae00);
+        border-bottom: 2px solid var(--main-color, #ffae00);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .about-content p, .about-content li {
       font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      color: var(--ann-color);
+      line-height: 1.8;
+      color: var(--text-color, #ccc);
+      margin-bottom: 15px;
     }
 
-    .about-container ul {
-      margin-left: 20px;
-      color: var(--text-color);
+    .skills-certs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 30px 0;
     }
 
-    .about-container a {
-      color: var(--main-color);
-      text-decoration: underline;
+    .skills-certs-grid ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .skills-certs-grid li {
+        background: #222;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--main-color, #ffae00);
+    }
+
+    .contact-info p {
+        margin-bottom: 10px;
+    }
+
+    .contact-info a {
+      color: var(--second-color, #aaa);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-info a:hover {
+      color: var(--main-color, #ffae00);
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .btn1 {
+        display: inline-block;
+        padding: 14px 35px;
+        background: var(--main-color, #ffae00);
+        color: #000;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all .50s ease;
+    }
+    .btn1:hover {
+        transform: translateY(-5px);
+        background: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .skills-certs-grid {
+            grid-template-columns: 1fr;
+        }
+        .about-container {
+            margin: 40px 20px;
+            padding: 30px;
+        }
     }
   </style>
 </head>
 <body>
+    <header>
+        <a href="index.html" class="logo"><img src="/logo.png"></a>
+        <ul class="menulist">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html" class="active">About me</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+        
+        <div class="menu-right">
+            <!-- "Let's Talk" button yahan nahi chahiye, kyunki yeh index page ka feature hai -->
+            <div class="bx bx-messege" id="menu-icon">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </header>
 
   <section class="about-container">
-    <h1>About Me</h1>
-    <p>Hi, I'm <strong>Ankit Kumar Meena</strong>, a B.Tech student specializing in Information Technology at <strong>USICT, GGSIPU</strong>. I'm a quick learner, passionate about tech, and always eager to take on challenges.</p>
+    <div class="about-header">
+        <h1>About Me</h1>
+        <p>A Passionate Developer & Tech Enthusiast</p>
+    </div>
 
-    <p>I’ve worked on projects related to IoT Automation, Data Visualization, and 3D Printing, and I’ve actively volunteered at university events, developing leadership and teamwork skills.</p>
+    <div class="about-content">
+        <h2>Who I Am</h2>
+        <p>
+            I'm <strong>Ankit Kumar Meena</strong>, a B.Tech student at <strong>USICT (GGSIPU)</strong> with a specialization in Information Technology. As a dedicated and quick learner, I thrive on solving complex problems and transforming innovative ideas into tangible technology solutions. My journey is driven by a relentless curiosity and a passion for continuous growth in the tech world.
+        </p>
 
-    <p><strong>Skills:</strong></p>
-    <ul>
-      <li>Web Development (1 year)</li>
-      <li>JavaScript, Python</li>
-      <li>Program Development & Technical Project Management</li>
-      <li>Leadership & Team Collaboration</li>
-    </ul>
+        <div class="skills-certs-grid">
+            <div class="skills-list">
+                <h2>Core Skills</h2>
+                <ul>
+                  <li>Web Development (HTML, CSS, JS)</li>
+                  <li>JavaScript & Python</li>
+                  <li>Program Development</li>
+                  <li>Technical Project Management</li>
+                  <li>Leadership & Team Collaboration</li>
+                </ul>
+            </div>
+            <div class="certs-list">
+                <h2>Certifications</h2>
+                <ul>
+                  <li>NSS Volunteer (Since Oct 2024)</li>
+                  <li>Data Visualization (July 2024)</li>
+                  <li>3D Printing & Prototyping (Feb 2024)</li>
+                  <li>IoT Automation (Nov 2023)</li>
+                </ul>
+            </div>
+        </div>
 
-    <p><strong>Certifications:</strong></p>
-    <ul>
-      <li>NSS Volunteer (Since Oct 2024)</li>
-      <li>Data Visualization (July 2024)</li>
-      <li>3D Printing & Prototyping (Feb 2024)</li>
-      <li>IoT Automation (Nov 2023)</li>
-    </ul>
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>📍 Based in <strong>Palam, Delhi</strong></p>
+            <p>📧 <a href="mailto:ankitkumar956021@gmail.com">ankitkumar956021@gmail.com</a></p>
+            <p>🔗 <a href="https://www.linkedin.com/in/ankit-meena-043039296/" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    </div>
 
-    <p>📍 Based in <strong>Palam, Delhi</strong></p>
-    <p>📧 <a href="mailto:ankitkumar956021@gmail.com">ankitkumar956021@gmail.com</a></p>
-    <p>📞 <a href="tel:+919560214284">+91 9560214284</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/ankit-meena-043039296/" target="_blank">LinkedIn Profile</a></p>
+    <div class="btn-container">
+        <a href="contact.html" class="btn1">Contact Me</a>
+        <a href="about.html" class="btn1">
+            More About Me
+            <i class="ri-arrow-right-s-fill"></i>
+        </a>
+    </div>
+
   </section>
+
+  <script src="dist/script.js"></script> <!-- Common script for header -->
 
 </body>
 </html>

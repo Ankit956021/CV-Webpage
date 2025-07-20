@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",      // JavaScript ke version ko specify karein
+    "module": "commonjs",
+    "outDir": "./dist",   // Compile hone ke baad JS files yahan save hongi
+    "rootDir": "./src",   // Aapki saari TypeScript files is folder mein rahengi
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"] // Sirf 'src' folder ki files ko compile karein
+}

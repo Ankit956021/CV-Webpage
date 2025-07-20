@@ -21,18 +21,17 @@
     </head>
     <body>
         <header>
-
             <a href="index.html" class="logo"><img src="/logo.png"></a>
             <ul class="menulist">
-                <a href="index.html" class="active"> home</a>
-                <a href="about.html">About me</a>
-                <a href="#">services</a>
-                <a href="#">protfolio</a>
-                <a href="contact.html">contact</a>
+                <li><a href="index.html" class="active">home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">projects</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
             
             <div class="menu-right">
-                <a href="#" class="menu-btn">
+                <a href="#" class="menu-btn" id="open-contact-modal-btn">
                     <span>Let's Talk</span>
                     <i class="ri-message-3-line"></i>
                 </a>
@@ -40,7 +39,6 @@
                     <i class="ri-menu-line"></i>
                 </div>
             </div>
-            </a>
         </header>
 
         <section class="hero">
@@ -48,37 +46,70 @@
                 <a href="#" class="h-line" data-aos="fade-right" data-aos-duration="1400">
                     <i class="ri-sparkling-line"></i>
                     <span> This Is Ankit Kumar Meena </span>
+                </a>
                 
-                </a>
-                    <h1 data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200"> UI / UX and <br> <span class="input"></span></h1>
-                    <h4 data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300"> With very passanated with work and fast learner.</h4>
-                    <div class="social-icon" data-aos="flip-left" data-aos-duration="1400" data-aos-delay="400">
-                        <a href="#"><i class="ri-instagram-line"></i> </a>
-                        <a href="#"> <i class="ri-github-line"></i></a>
-                        <a href="#"> <i class="ri-linkedin-box-fill"></i></a>
-                        
+                <h1 data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200"> UI / UX and <br> <span class="input"></span></h1>
+                <h4 data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300"> With very passanated with work and fast learner.</h4>
+                
+                <div class="social-icon" data-aos="flip-left" data-aos-duration="1400" data-aos-delay="400">
+                    <a href="#"><i class="ri-instagram-line"></i> </a>
+                    <a href="#"> <i class="ri-github-line"></i></a>
+                    <a href="#"> <i class="ri-linkedin-box-fill"></i></a>
+                </div>
 
-                    </div>
-
-                    <div class="h-btn" data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="400">
-                        <a href="#" class="btn1">
-                            My Work Sone
-                            <i class="ri-arrow-down-s-fill"></i>
-                        </a>
-                        <a href="/Ankit-Kumar-Meena.pdf" class="btn2">
-                            Download CV
-                            <i class="ri-download-2-line"></i>
-                        </a>
-
-                    </div>
-                </a>
+                <div class="h-btn" data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="400">
+                    <a href="#" class="btn1">
+                        My Work Sone
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </a>
+                    <a href="/Ankit-Kumar-Meena.pdf" class="btn2">
+                        Download CV
+                        <i class="ri-download-2-line"></i>
+                    </a>
+                </div>
                 
             </div>
         </section>
 
+        <!--about section design-->
+        <section class="about">
+            <div class="about-img" data-aos="zoom-in-down" data-aos-duration="1400">
+                <img src="me.jpg" alt="Ankit Kumar Meena">
+            </div>
+            <div class="about-text" data-aos="zoom-in-up" data-aos-duration="1400">
+                <h2>About Me</h2>
+                <h4>Developer</h4>
+                <p>I'm Ankit Kumar Meena, a B.Tech student at USICT (GGSIPU) with a specialization in Information Technology. As a dedicated and quick learner, I thrive on solving complex problems and transforming innovative ideas into tangible technology solutions. My journey is driven by a relentless curiosity and a passion for continuous growth in the tech world.</p>
+                <a href="about.html" class="btn1">
+                    More About Me
+                    <i class="ri-arrow-right-s-fill"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS SECTION START ===== -->
+        <section class="skills-section">
+            <div class="skills-content" data-aos="fade-up" data-aos-duration="1400">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="100">HTML5</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="200">CSS3</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="300">JavaScript</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="400">TypeScript</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="100">React</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="200">Node.js</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="300">C++</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="400">Java</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="100">Figma</div>
+                    <div class="skill-box" data-aos="zoom-in" data-aos-delay="200">Git & GitHub</div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== SKILLS SECTION END ===== -->
+
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-        <script src="script.js"></script>
+        <script src="dist/script.js"></script>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
@@ -87,6 +118,31 @@
           });
         </script>
 
+        <!-- Contact Modal HTML -->
+        <div id="contact-modal-main" class="modal-overlay">
+            <div class="modal-content">
+              <span id="close-contact-modal-btn" class="modal-close">&times;</span>
+              <h2>Let's Connect</h2>
+              <form id="main-contact-form">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group email-form-group"> <!-- Ek nayi class add ki hai -->
+                  <input type="email" name="email" placeholder="Your Email" required>
+                  <span class="validation-icon"></span> <!-- Icon ke liye span -->
+                </div>
+                <div class="form-group">
+                  <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn1">Send Message</button>
+              </form>
+            </div>
+        </div>
+
+        <!-- EmailJS SDK -->
+        <script type="text/javascript"
+              src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
 
     </body>
 </html>
